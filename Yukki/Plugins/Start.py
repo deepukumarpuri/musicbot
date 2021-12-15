@@ -39,6 +39,35 @@ __HELP__ = """
 - Get Settings DashBoard.
 """
 
+def start_pannel():  
+    buttons  = [
+            [
+                InlineKeyboardButton(text="🎚 Commands Menu", url="https://telegra.ph/Music-Bot-12-05")
+            ],
+            [ 
+                InlineKeyboardButton(text="📨Official Channel", url="https://t.me/Aniebots"),
+                InlineKeyboardButton(text="📨Support Group", url="https://t.me/Aniebotsupports")
+            ],
+    ]
+    return "🎛  **This is Music Music Bot**", buttons
+
+pstart_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("💞 Sᴜᴍᴍᴏɴ Mᴇ 💞", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"),
+                ], 
+                [InlineKeyboardButton("🧰 Cᴏᴍᴍᴀɴᴅꜱ 🧰", url=f"https://telegra.ph/Music-Bot-12-05")],
+                [
+                    InlineKeyboardButton(
+                        "📢 Uᴘᴅᴀᴛᴇꜱ 📢", url=f"https://t.me/Aniebots"), 
+                    InlineKeyboardButton(
+                        "💬 Sᴜᴘᴘᴏʀᴛ 💬", url=f"https://t.me/DKBOTZ")
+                ],
+                [ InlineKeyboardButton("🧑‍💻 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ 🧑‍💻", url=f"https://GitHub.com/Anieteam/Anievc"),]
+
+            ]
+        )
+
 
 @app.on_message(filters.new_chat_members, group=welcome_group)
 async def welcome(_, message: Message):
