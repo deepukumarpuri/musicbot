@@ -75,7 +75,7 @@ async def welcome(_, message: Message):
             return
 
 
-@Client.on_message(filters.group & filters.command(["start", "help"]))
+@app.on_message(filters.group & filters.command(["start", "help"]))
 async def start(_, message: Message):
     chat_id = message.chat.id
 #    if not await is_served_chat(chat_id):
@@ -85,7 +85,7 @@ async def start(_, message: Message):
     await message.reply_text(f"Thanks for having me in {message.chat.title}.\nMusic is alive.\n\nFor any assistance or help, checkout our support group and channel.", reply_markup=InlineKeyboardMarkup(out[1]))
     return
         
-@Client.on_message(filters.private & filters.incoming & filters.command("start"))
+@app.on_message(filters.private & filters.incoming & filters.command("start"))
 async def play(_, message: Message):
     if len(message.command) == 1:
         user_id = message.from_user.id
